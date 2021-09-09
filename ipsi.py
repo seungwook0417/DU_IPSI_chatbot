@@ -16,7 +16,7 @@ def ipsi_index():
     response = insert_text("안녕하세요 대구대학교 입학처입니다.🙂\n입학과 관련하여 어떤 정보가 궁금하신가요?")
     response = plus_card(response,"버튼을 누르면 관련 페이지로 이동합니다.","")
     response = insert_button_text(response, "신입학", "신입학 알려주세요")
-    response = insert_button_text(response, "재외국인", "재외국인 알려주세요")
+    #response = insert_button_text(response, "재외국인", "재외국인 알려주세요")
     response = insert_button_url(response, "입학처 홈페이지", "https://ipsi.daegu.ac.kr/")
     reply = make_reply("처음으로 돌아가기", "처음으로 돌아가기")
     response = insert_replies(response, reply)
@@ -44,10 +44,12 @@ def ipsi_new():
     response = insert_carousel_button(response, "전형일정", "전형일정 알려주세요")
     response = insert_carousel_button(response, "전년도 입시결과", "전년도 입시결과 알려주세요")
     response = insert_carousel_button(response, "수시 교과반영기준", "교과반영기준 알려주세요")
-    response = insert_carousel_card(response, "", "", "https://i.esdrop.com/d/hlogPZr3wi/teCKmSeBhY.png")
+    response = insert_carousel_card(response, "", "", "https://i.esdrop.com/d/hlogPZr3wi/Wjt7Kpo3GN.png")
     response = insert_carousel_button(response, "수시 진로선택과목", "진로 선택과목 알려주세요")
     response = insert_carousel_button(response, "수시 복수지원", "복수지원 알려주세요")
     response = insert_carousel_button(response, "대학 학과별 소개", "학과별 소개 알려주세요")
+    response = insert_carousel_card(response, "", "", "https://i.esdrop.com/d/hlogPZr3wi/teCKmSeBhY.png")
+    response = insert_carousel_button(response, "생활기록부 성적산출", "생활기록부 성적산출 알려주세요")
     reply = make_reply("처음으로 돌아가기", "처음으로 돌아가기")
     response = insert_replies(response, reply)
     return response
@@ -146,6 +148,17 @@ def ipsi_subject():
     response = insert_text("2022학년도 대구대학교 수시모집 학생교과반영기준을 안내해줄게요!😘")
     response = puls_text(response,"학생부교과전형은 인문사회/자연과학/공학 계열과 관계없이\n국어/영어/수학 교과 중 상위 2개 교과의 전 과목과\n사회/과학 교과 중 상위 1개 교과의 전 과목을 반영합니다.")
     response = puls_text(response,"학생부종합전형은 별도의 교과반영기준은 없습니다.😀\n학교생활기록부의 전반적인 내용을 종합적으로 평가하게 됩니다.\n따라서 이수과목, 학생수, 이수단위, 교과등급, 세부능력 및 특기사항 등 기재된 모든 내용을 통해 평가를 진행합니다.")
+    reply = make_reply("이전으로 돌아가기", "신입학 알려주세요")
+    response = insert_replies(response, reply)
+    reply = make_reply("처음으로 돌아가기", "처음으로 돌아가기")
+    response = insert_replies(response, reply)
+    return response
+
+# 성적산출
+def ipsi_score():
+    response = insert_text("2022학년도 대구대학교 학교생활기록부 성적산출을 안내해줄게요!😘")
+    response = plus_card(response, "👇아래 버튼을 눌러 2022학년도 학교생활기록부 성적산출을  확인해보세요!\n", "")
+    response = insert_button_url(response, "학교생활기록부 성적산출", "https://addon.jinhakapply.com/nesin/1044/2022/susi.html")
     reply = make_reply("이전으로 돌아가기", "신입학 알려주세요")
     response = insert_replies(response, reply)
     reply = make_reply("처음으로 돌아가기", "처음으로 돌아가기")

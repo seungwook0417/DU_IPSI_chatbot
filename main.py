@@ -59,6 +59,12 @@ def subject():
     response = ipsi_subject()
     return response
 
+# 성적산출
+@app.route("/score", methods=['POST'])
+def score():
+    response = ipsi_score()
+    return response
+
 # 진로선택과목
 @app.route("/course", methods=['POST'])
 def course():
