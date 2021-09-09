@@ -65,6 +65,12 @@ def score():
     response = ipsi_score()
     return response
 
+# 경쟁률
+@app.route("/ratio", methods=['POST'])
+def ratio():
+    response = ipsi_ratio()
+    return response
+
 # 진로선택과목
 @app.route("/course", methods=['POST'])
 def course():

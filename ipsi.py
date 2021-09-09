@@ -50,6 +50,7 @@ def ipsi_new():
     response = insert_carousel_button(response, "대학 학과별 소개", "학과별 소개 알려주세요")
     response = insert_carousel_card(response, "", "", "https://i.esdrop.com/d/hlogPZr3wi/teCKmSeBhY.png")
     response = insert_carousel_button(response, "생활기록부 성적산출", "생활기록부 성적산출 알려주세요")
+    response = insert_carousel_button(response, "수시모집 경쟁률", "수시모집 경쟁률 알려주세요")
     reply = make_reply("처음으로 돌아가기", "처음으로 돌아가기")
     response = insert_replies(response, reply)
     return response
@@ -164,6 +165,18 @@ def ipsi_score():
     reply = make_reply("처음으로 돌아가기", "처음으로 돌아가기")
     response = insert_replies(response, reply)
     return response
+
+# 경쟁률 확인
+def ipsi_ratio():
+    response = insert_text("2022학년도 대구대학교 수시모집 경쟁률을 안내해줄게요!😘")
+    response = plus_card(response, "👇아래 버튼을 눌러 2022학년도  대구대학교 수시모집 경쟁률을 확인해보세요!\n", "")
+    response = insert_button_url(response, "대구대학교 수시모집 경쟁률", "http://addon.jinhakapply.com/RatioV1/RatioH/Ratio10440331.html")
+    reply = make_reply("이전으로 돌아가기", "신입학 알려주세요")
+    response = insert_replies(response, reply)
+    reply = make_reply("처음으로 돌아가기", "처음으로 돌아가기")
+    response = insert_replies(response, reply)
+    return response
+
 
 # 진로선택과목
 def ipsi_course():
