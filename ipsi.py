@@ -49,7 +49,7 @@ def ipsi_new():
     response = insert_carousel_button(response, "수시 복수지원", "복수지원 알려주세요")
     response = insert_carousel_button(response, "대학 학과별 소개", "학과별 소개 알려주세요")
     response = insert_carousel_card(response, "", "", "https://i.esdrop.com/d/hlogPZr3wi/teCKmSeBhY.png")
-    response = insert_carousel_button(response, "생활기록부 성적산출", "생활기록부 성적산출 알려주세요")
+    #response = insert_carousel_button(response, "생활기록부 성적산출", "생활기록부 성적산출 알려주세요")
     response = insert_carousel_button(response, "수시모집 경쟁률", "수시모집 경쟁률 알려주세요")
     reply = make_reply("처음으로 돌아가기", "처음으로 돌아가기")
     response = insert_replies(response, reply)
@@ -102,10 +102,10 @@ def ipsi_susi():
                                         "패션디자인학과\n"
                                         "실내건축디자인학과",
                                         "https://i.esdrop.com/d/hlogPZr3wi/g5G827iLrx.png")
-    response = insert_carousel_itemcard(response, "🔸실기고사(문화예술학부)",
-                                        "2021. 10. 15.(금)\n"
-                                        "문화예술학부",
-                                        "https://i.esdrop.com/d/hlogPZr3wi/4ZTAqOXe6R.png")
+    # response = insert_carousel_itemcard(response, "🔸실기고사(문화예술학부)",
+    #                                     "2021. 10. 15.(금)\n"
+    #                                     "문화예술학부",
+    #                                     "https://i.esdrop.com/d/hlogPZr3wi/4ZTAqOXe6R.png")
     response = insert_carousel_itemcard(response, "🔸합격자 발표",
                                         "🔹수능최저학력 기준 미적용\n"
                                         "2021. 11. 12.(금) 21:00\n"
@@ -122,8 +122,42 @@ def ipsi_susi():
 
 # 정시일정
 def ipsi_jungsi():
-    response = insert_card("","❗정시일정은 아직 작성중에 있어요😰")
+    response = insert_card("","정시 모집 주요 일정을 안내해줄게요😀\n원서접수부터 등록까지 전형일정 꼼꼼하게 확인하기 잊지말아요!\n💡전형 일정이 변경될 경우에는 입학안내 홈페이지에 공고 됩니다.")
     response = insert_button_url(response, "정시전형 전형일정 전체보기", "https://ipsi.daegu.ac.kr/html/kr/sub2/sub2_0201.html?site_dvs_cd=kr&menu_dvs_cd=0201")
+    response = plus_carousel_itemcard(response)
+    response = insert_carousel_itemcard(response, "🔸원서접수 기한 및 도착확인",
+                                        "🔹입학원서 접수(인터넷)\n"
+                                        "2021. 12. 30.(목) ∼ 2022. 1. 3.(월) 18:00\n"
+                                        "🔹서류제출 기한(해당자)\n"
+                                        "2021. 12. 30.(목) ~ 2022. 1. 7.(금) 17:00\n",
+                                        "https://i.esdrop.com/d/hlogPZr3wi/GzfhZBETUF.png")
+    response = insert_carousel_itemcard(response, "🔸실기고사(정시 나군)-예능계",
+                                        "2022. 1. 14.(금) 10:00\n"
+                                        "아트앤디자인전공\n"
+                                        "영상애니메이션디자인학전공\n"
+                                        "산업디자인학과\n"
+                                        "패션디자인학과\n"
+                                        "실내건축디자인학과\n",
+                                        "https://i.esdrop.com/d/hlogPZr3wi/Nh0QR4JrMa.png")
+    response = insert_carousel_itemcard(response, "🔸실기고사(정시 다군)-체능계",
+                                        "2022. 1. 25.(화)\n"
+                                        "체육학과\n"
+                                        "스포츠레저학과\n",
+                                        "https://i.esdrop.com/d/hlogPZr3wi/Nh0QR4JrMa.png")
+    response = insert_carousel_itemcard(response, "🔸실기고사(정시 다군)-예능계",
+                                        "2022. 1. 22.(토) 10:00\n"
+                                        "생활조형디자인학전공\n"
+                                        "시각디자인전공\n"
+                                        "서비스디자인전공\n",
+                                        "https://i.esdrop.com/d/hlogPZr3wi/Nh0QR4JrMa.png")
+    response = insert_carousel_itemcard(response, "🔸합격자 발표",
+                                        "🔹최초합격\n"
+                                        "발표 : 2022. 2. 8.(화) 21:00\n"
+                                        "등록 : 2022. 2. 9.(수) ~ 2. 11.(금)\n"
+                                        "🔹충원합격\n"
+                                        "발표 : 2022. 2. 11.(금) ~ 2. 20.(일)\n"
+                                        "등록 : 2022. 2. 12.(토) ~ 2. 21.(월)\n",
+                                        "https://i.esdrop.com/d/hlogPZr3wi/BD2idISgCh.png")
     reply = make_reply("이전으로 돌아가기", "전형일정 알려주세요")
     response = insert_replies(response, reply)
     reply = make_reply("처음으로 돌아가기", "처음으로 돌아가기")
